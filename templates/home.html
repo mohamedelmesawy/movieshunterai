@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="shadow p-3 mb-5 bg-white rounded" style="background-color: #56565678 !important;">
+  <h1 style="color:rgb(216 216 216);">Welcome to the Movie Hunter</h1>
+  <h3 style="color:rgb(216 216 216); font-size: 18px; font-weight: 100;">Please enter a Hollywood movie you like</h3>
+</div>
+
+  <form action="{{url_for('recommend')}}">
+    <input type="text" name="movie" class="form-control" placeholder="Movie name here" style="background-color: #56565678 !important; color:rgb(216 216 216);">
+    <br>
+    <input type="submit" class="btn btn-info" style="width: 80px; background-color: #242424;" value="Enter">
+  </form>
+{% endblock %}
+
+
+
+

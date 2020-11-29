@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+
+  {% if t=='s' %}
+  <div class="shadow p-3 mb-5 bg-white rounded" style="background-color: #56565678 !important;">
+    <h2 style="color:rgb(251 116 116);">Sorry! This movie is not in our database.</h3>
+    <hr>
+    <h6 style="color:rgb(251 116 116);">Please check if you spelled it correct.</h3>
+    <h6 style="color:rgb(251 116 116);">Or try with another movie.</h3>
+  </div>
+
+  {% else %}
+  <div class="shadow p-3 mb-5 bg-white rounded" style="background-color: #56565678 !important;">
+    <h1 style="color:rgb(216 216 216); font-family: fantasy;">BAM !!!</h1>
+    <h3 style="color:rgb(216 216 216);">Here are more recommendations like: {{movie}}</h3>
+  </div>
+
+    <ul class="list-group list-group-flush">
+      {% for m in r %}
+        <li class="list-group-item" style="color:rgb(242 162 35); background-color: #65656575;"><strong>{{m|capitalize}}</strong></li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+{% endblock %}
